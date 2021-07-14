@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="housebuilder" nsURI="http://it.univaq.disim/housebuilder" nsPrefix="housebuilder">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="House" eSuperTypes="#//Named">
+    <eOperations name="hasOuterSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="self.floors.spaces->select(e | e.oclIsTypeOf(OuterSpace))->size() > 0"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isSmart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="self.controllers->size() > 0"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="province" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postalCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buildingDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floors" lowerBound="1"
+        upperBound="-1" eType="#//Floor" containment="true" eOpposite="#//Floor/house"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passages" upperBound="-1"
+        eType="#//Passage" containment="true" eOpposite="#//Passage/house"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllers" upperBound="-1"
+        eType="#//Controller" containment="true" eOpposite="#//Controller/house"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalFootage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.floors->collect(s | s.internalFootage)->sum()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outerFootage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.floors->collect(s | s.outerFootage)->sum()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="footage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="internalFootage + outerFootage"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomsNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.floors->collect(s | s.roomsNumber)->sum()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//Named">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="FloorLevelUnique"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="FloorLevelUnique" value="Tuple {&#xA;&#x9;message : String = 'There is another floor with the same level. Level must be unique',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.house.floors->select(f | f &lt;> self)->collect(f | f.level)->excludes(self.level)&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spaces" lowerBound="1"
+        upperBound="-1" eType="#//Space" containment="true" eOpposite="#//Space/floor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="#//House"
+        eOpposite="#//House/floors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalFootage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.spaces->select(s | s.oclIsTypeOf(Room))->collect(s | s.footage)->sum()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outerFootage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.spaces->select(s | s.oclIsTypeOf(OuterSpace))->collect(s | s.footage)->sum()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="footage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="internalFootage + outerFootage"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomsNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.spaces->select(e | e.oclIsTypeOf(Room))->size()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Space" abstract="true" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
+        eType="#//Device" containment="true" eOpposite="#//Device/space"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floor" lowerBound="1" eType="#//Floor"
+        eOpposite="#//Floor/spaces"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" ordered="false"
+        upperBound="-1" eType="#//Sensor" eOpposite="#//Sensor/space"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passagesA" ordered="false"
+        upperBound="-1" eType="#//Passage" eOpposite="#//Passage/spaceA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passagesB" ordered="false"
+        upperBound="-1" eType="#//Passage" eOpposite="#//Passage/spaceB"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passages" ordered="false"
+        upperBound="-1" eType="#//Passage" changeable="false" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="passagesA->union(passagesB)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="footage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="length * width"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//Space">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomType" eType="#//RoomType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="windows" upperBound="-1"
+        eType="#//Window" containment="true" eOpposite="#//Window/room"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Passage" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spaceA" lowerBound="1"
+        eType="#//Space" eOpposite="#//Space/passagesA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spaceB" lowerBound="1"
+        eType="#//Space" eOpposite="#//Space/passagesB"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
+        eType="#//Device" containment="true" eOpposite="#//Device/passage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="#//House"
+        eOpposite="#//House/passages"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Door" eSuperTypes="#//Passage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doorType" eType="#//DoorType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doorsNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoomType">
+    <eLiterals name="SIMPLE"/>
+    <eLiterals name="BATHROOM" value="1"/>
+    <eLiterals name="LIVING_ROOM" value="2"/>
+    <eLiterals name="BEDROOM" value="3"/>
+    <eLiterals name="HALLWAY" value="4"/>
+    <eLiterals name="STUDY" value="5"/>
+    <eLiterals name="ENTRANCE" value="6"/>
+    <eLiterals name="STORAGE_ROOM" value="7"/>
+    <eLiterals name="GARAGE" value="8"/>
+    <eLiterals name="LAUNDRY_ROOM" value="9"/>
+    <eLiterals name="HOBBY_ROOM" value="10"/>
+    <eLiterals name="CELLAR" value="11"/>
+    <eLiterals name="LUNCHROOM" value="12"/>
+    <eLiterals name="RUMPUS_ROOM" value="13"/>
+    <eLiterals name="STAIRS" value="14"/>
+    <eLiterals name="KITCHEN" value="15"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DoorType">
+    <eLiterals name="SIMPLE"/>
+    <eLiterals name="DOOR_WINDOW" value="1"/>
+    <eLiterals name="PANIC_DOOR" value="2"/>
+    <eLiterals name="ENTRANCE_DOOR" value="3"/>
+    <eLiterals name="SLIDING_DOOR" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Named">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OsVersionMissing"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="OsVersionMissing" value="Tuple {&#xA;&#x9;message : String = 'If you specify the os, you have to specify the osVersion too',&#xA;&#x9;status : Boolean = if self.os->notEmpty() then self.os->notEmpty() else null endif&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="osVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" lowerBound="1"
+        upperBound="-1" eType="#//Actuator" containment="true" eOpposite="#//Actuator/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" lowerBound="1"
+        upperBound="-1" eType="#//Sensor" containment="true" eOpposite="#//Sensor/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="#//House"
+        eOpposite="#//House/controllers"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ActuatorType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="device" lowerBound="1"
+        eType="#//Device" eOpposite="#//Device/actuator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
+        eType="#//Controller" eOpposite="#//Controller/actuators"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//SensorType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="space" lowerBound="1" eType="#//Space"
+        eOpposite="#//Space/sensors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
+        eType="#//Controller" eOpposite="#//Controller/sensors"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DeviceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" eType="#//Actuator"
+        eOpposite="#//Actuator/device"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="space" eType="#//Space"
+        eOpposite="#//Space/devices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passage" eType="#//Passage"
+        eOpposite="#//Passage/devices"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActuatorType">
+    <eLiterals name="IDRAULIC" literal="IDRAULIC"/>
+    <eLiterals name="PNEUMATIC" value="1" literal="PNEUMATIC"/>
+    <eLiterals name="ELECTRICAL" value="2" literal="ELECTRICAL"/>
+    <eLiterals name="THERMAL" value="3" literal="THERMAL"/>
+    <eLiterals name="MECHANICAL" value="4" literal="MECHANICAL"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SensorType">
+    <eLiterals name="TEMPERATURE" literal="TEMPERATURE"/>
+    <eLiterals name="PRESSURE" value="1" literal="PRESSURE"/>
+    <eLiterals name="PROXIMITY" value="2" literal="PROXIMITY"/>
+    <eLiterals name="ACCELEROMETER" value="3" literal="ACCELEROMETER"/>
+    <eLiterals name="GAS" value="4" literal="GAS"/>
+    <eLiterals name="SMOKE" value="5" literal="SMOKE"/>
+    <eLiterals name="VIDEO_SURVAILLANCE_CAMERA" value="6" literal="VIDEO_SURVAILLANCE_CAMERA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OuterSpaceType">
+    <eLiterals name="BALCONY"/>
+    <eLiterals name="GARDEN" value="1"/>
+    <eLiterals name="TERRACE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GroundType">
+    <eLiterals name="ASPALTH"/>
+    <eLiterals name="TERRAIN" value="1"/>
+    <eLiterals name="PAVING" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DeviceType">
+    <eLiterals name="THERMOSTAT"/>
+    <eLiterals name="APPLIANCE" value="1"/>
+    <eLiterals name="SOCKET" value="2"/>
+    <eLiterals name="ROLLER_SHUTTERS" value="3"/>
+    <eLiterals name="GATE" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="#//Named">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="WindowHeightConstraints"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="WindowHeightConstraints" value="Tuple {&#xA;&#x9;message : String = 'Window height must be a value between 0 and room height',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;height &lt;= room.height and height >= 0.0&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doorsNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//Room" eOpposite="#//Room/windows"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OuterSpace" eSuperTypes="#//Space">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//OuterSpaceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ground" eType="#//GroundType"/>
+  </eClassifiers>
+</ecore:EPackage>
