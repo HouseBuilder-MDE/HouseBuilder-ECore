@@ -4,6 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:modeltwo="http://it.univaq.disim/housebuilderV2"
+        xsi:schemaLocation="http://it.univaq.disim/housebuilderV2 housebuilderV2.ecore"
     name="Casa di Stefano"
     state="Italia"
     province="Chieti"

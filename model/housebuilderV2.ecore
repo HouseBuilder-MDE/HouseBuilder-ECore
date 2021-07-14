@@ -10,7 +10,7 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="House" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
+  <eClassifiers xsi:type="ecore:EClass" name="House" eSuperTypes="#//Named">
     <eOperations name="hasOuterSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="body" value="self.floors.spaces->select(e | e.oclIsTypeOf(ExternalSpace))->size() > 0"/>
@@ -28,14 +28,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="buildingDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="floors" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Floor"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Floor/house"/>
+        upperBound="-1" eType="#//Floor" containment="true" eOpposite="#//Floor/house"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="passages" upperBound="-1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Passage"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Passage/house"/>
+        eType="#//Passage" containment="true" eOpposite="#//Passage/house"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controllers" upperBound="-1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Controller"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Controller/house"/>
+        eType="#//Controller" containment="true" eOpposite="#//Controller/house"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalFootage" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
         volatile="true" derived="true">
@@ -65,13 +62,12 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entrances" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Entrance"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Entrance/house"/>
+        upperBound="-1" eType="#//Entrance" containment="true" eOpposite="#//Entrance/house"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Named" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
+  <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//Named">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="FloorLevelUnique"/>
     </eAnnotations>
@@ -80,10 +76,9 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="spaces" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space/floor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House/floors"/>
+        upperBound="-1" eType="#//Space" containment="true" eOpposite="#//Space/floor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="#//House"
+        eOpposite="#//House/floors"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalFootage" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" changeable="false"
         volatile="true" derived="true">
@@ -113,27 +108,22 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Space" abstract="true" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
+  <eClassifiers xsi:type="ecore:EClass" name="Space" abstract="true" eSuperTypes="#//Named">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Device"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Device/space"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="floor" lowerBound="1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Floor"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Floor/spaces"/>
+        eType="#//Device" containment="true" eOpposite="#//Device/space"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floor" lowerBound="1" eType="#//Floor"
+        eOpposite="#//Floor/spaces"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" ordered="false"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Sensor"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Sensor/space"/>
+        upperBound="-1" eType="#//Sensor" eOpposite="#//Sensor/space"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="passagesA" ordered="false"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Passage"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Passage/spaceA"/>
+        upperBound="-1" eType="#//Passage" eOpposite="#//Passage/spaceA"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="passagesB" ordered="false"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Passage"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Passage/spaceB"/>
+        upperBound="-1" eType="#//Passage" eOpposite="#//Passage/spaceB"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="passages" ordered="false"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Passage"
-        changeable="false" volatile="true" derived="true">
+        upperBound="-1" eType="#//Passage" changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="derivation" value="passagesA->union(passagesB)"/>
       </eAnnotations>
@@ -146,26 +136,22 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entrances" upperBound="-1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Entrance"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Entrance/space"/>
+        eType="#//Entrance" eOpposite="#//Entrance/space"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space">
+  <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//Space">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomType" eType="ecore:EEnum /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//RoomType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomType" eType="#//RoomType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="windows" upperBound="-1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Window"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Window/room"/>
+        eType="#//Window" containment="true" eOpposite="#//Window/room"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Passage" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Door">
+  <eClassifiers xsi:type="ecore:EClass" name="Passage" eSuperTypes="#//Named #//Door">
     <eStructuralFeatures xsi:type="ecore:EReference" name="spaceA" lowerBound="1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space/passagesA"/>
+        eType="#//Space" eOpposite="#//Space/passagesA"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="spaceB" lowerBound="1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space/passagesB"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House/passages"/>
+        eType="#//Space" eOpposite="#//Space/passagesB"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="#//House"
+        eOpposite="#//House/passages"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoomType">
     <eLiterals name="SIMPLE"/>
@@ -194,7 +180,7 @@
     <eLiterals name="GATE" value="5"/>
     <eLiterals name="EMPTY" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Named">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="OsVersionMissing"/>
     </eAnnotations>
@@ -205,44 +191,38 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="osVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Actuator"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Actuator/controller"/>
+        upperBound="-1" eType="#//Actuator" containment="true" eOpposite="#//Actuator/controller"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Sensor"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Sensor/controller"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House/controllers"/>
+        upperBound="-1" eType="#//Sensor" containment="true" eOpposite="#//Sensor/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="#//House"
+        eOpposite="#//House/controllers"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EEnum /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//ActuatorType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ActuatorType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="device" lowerBound="1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Device"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Device/actuator"/>
+        eType="#//Device" eOpposite="#//Device/actuator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Controller"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Controller/actuators"/>
+        eType="#//Controller" eOpposite="#//Controller/actuators"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EEnum /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//SensorType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//SensorType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
         defaultValueLiteral="0.0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="space" lowerBound="1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space/sensors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="space" lowerBound="1" eType="#//Space"
+        eOpposite="#//Space/sensors"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Controller"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Controller/sensors"/>
+        eType="#//Controller" eOpposite="#//Controller/sensors"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//DeviceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//Named">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DeviceType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Actuator"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Actuator/device"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="space" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space/devices"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="door" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Door"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Door/devices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" eType="#//Actuator"
+        eOpposite="#//Actuator/device"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="space" eType="#//Space"
+        eOpposite="#//Space/devices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="door" eType="#//Door" eOpposite="#//Door/devices"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActuatorType">
     <eLiterals name="IDRAULIC" literal="IDRAULIC"/>
@@ -277,7 +257,7 @@
     <eLiterals name="ROLLER_SHUTTERS" value="3"/>
     <eLiterals name="GATE" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
+  <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="#//Named">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="WindowHeightConstraints"/>
     </eAnnotations>
@@ -289,30 +269,28 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Room"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Room/windows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//Room" eOpposite="#//Room/windows"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalSpace" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//OuterSpaceType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ground" eType="ecore:EEnum /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//GroundType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalSpace" eSuperTypes="#//Space">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//OuterSpaceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ground" eType="#//GroundType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Door" abstract="true" interface="true"
-      eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named">
+      eSuperTypes="#//Named">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="doorType" lowerBound="1"
-        eType="ecore:EEnum /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//DoorType"/>
+        eType="#//DoorType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="doorsNumber" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
-        eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Device"
-        containment="true" eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Device/door"/>
+        eType="#//Device" containment="true" eOpposite="#//Device/door"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entrance" eSuperTypes="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Named /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Door">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//House/entrances"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="space" lowerBound="1" eType="ecore:EClass /it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space"
-        eOpposite="/it.univaq.disim.housebuilder/model/housebuilderV2.ecore#//Space/entrances"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entrance" eSuperTypes="#//Named #//Door">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="house" lowerBound="1" eType="#//House"
+        eOpposite="#//House/entrances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="space" lowerBound="1" eType="#//Space"
+        eOpposite="#//Space/entrances"/>
   </eClassifiers>
 </ecore:EPackage>
