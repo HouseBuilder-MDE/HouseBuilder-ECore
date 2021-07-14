@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modeltwo:House
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:modeltwo="http://it.univaq.disim/housebuilderV2"
+    xsi:schemaLocation="http://it.univaq.disim/housebuilderV2 housebuilderV2.ecore"
+    name="house"
+    state="Italia"
+    province="Roma"
+    city="Roma"
+    postalCode="45321"
+    address="Via delle Magnolie"
+    buildingDate="2021-10-09T00:00:00.000+0200">
+  <floors name="1">
+    <spaces
+        xsi:type="modeltwo:Room"
+        name="1"
+        length="8.0"
+        width="8.0"
+        passagesA="//@passages.0 //@passages.1"
+        entrances="//@entrances.0"
+        height="2.0"
+        roomType="GARAGE"/>
+    <spaces
+        xsi:type="modeltwo:Room"
+        name="2"
+        length="5.0"
+        width="6.0"
+        passagesB="//@passages.0 //@passages.1"
+        height="2.0">
+      <windows
+          name="2"
+          doorsNumber="2"
+          width="2.0"
+          height="1.0"/>
+    </spaces>
+    <spaces
+        xsi:type="modeltwo:ExternalSpace"
+        name="1"
+        length="5.0"
+        width="6.0"
+        ground="PAVING">
+      <devices
+          name="2"
+          type="SOCKET"
+          model="2"/>
+    </spaces>
+    <spaces
+        xsi:type="modeltwo:ExternalSpace"
+        name="2"
+        length="10.0"
+        width="12.0"
+        type="GARDEN"
+        ground="TERRAIN"/>
+  </floors>
+  <floors name="2"
+      level="2">
+    <spaces
+        xsi:type="modeltwo:Room"
+        name="4"
+        length="3.0"
+        width="4.0"
+        sensors="//@controllers.0/@sensors.0"
+        height="2.0"
+        roomType="LIVING_ROOM"/>
+  </floors>
+  <floors name="3"
+      level="-2">
+    <spaces
+        xsi:type="modeltwo:Room"
+        name="5"
+        length="54.0"
+        width="5.0"
+        height="2.0"
+        roomType="ENTRANCE"/>
+  </floors>
+  <passages
+      name="Porta scorrevole principale"
+      doorType="SLIDING_DOOR"
+      doorsNumber="2"
+      width="1.0"
+      height="2.2"
+      spaceA="//@floors.0/@spaces.0"
+      spaceB="//@floors.0/@spaces.1">
+    <devices
+        name="Porta automatica"
+        type="GATE"
+        model="Netgear"/>
+  </passages>
+  <passages
+      name="Passaggio principale"
+      doorType="EMPTY"
+      width="1.4"
+      height="2.4"
+      spaceA="//@floors.0/@spaces.0"
+      spaceB="//@floors.0/@spaces.1"/>
+  <controllers
+      name="2"
+      model="Main controller"
+      os="SimbaOS"
+      osVersion="1.6v2">
+    <actuators
+        name="gate mech actuator"
+        type="MECHANICAL"
+        model="aka"
+        device="//@entrances.0/@devices.0"/>
+    <sensors
+        name="temp sensor"
+        model="agua"
+        space="//@floors.1/@spaces.0"/>
+  </controllers>
+  <entrances
+      name="1"
+      space="//@floors.0/@spaces.0">
+    <devices
+        name="wdwd"
+        type="GATE"
+        model="wdw"
+        actuator="//@controllers.0/@actuators.0"/>
+  </entrances>
+</modeltwo:House>
