@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:housebuilder="http://it.univaq.disim/housebuilder"
-    xsi:schemaLocation="http://it.univaq.disim/housebuilder housebuilder.ecore"
+    xsi:schemaLocation="http://it.univaq.disim/housebuilder /HouseBuilder-ATL/housebuilder.ecore"
     name="Casa di Paolo"
     state="Italia"
     province="Frosinone"
@@ -150,21 +150,21 @@
     </spaces>
     <spaces
         xsi:type="housebuilder:Room"
-        name="Bagno II° Piano"
+        name="Bagno Secondo Piano"
         length="3.0"
         width="2.0"
         passagesB="//@passages.6"
         height="2.8"
         roomType="BATHROOM">
       <windows
-          name="Finestra bagno II° piano"
+          name="Finestra bagno Secondo Piano"
           doorsNumber="1"
           width="0.9"
           height="1.2"/>
     </spaces>
     <spaces
         xsi:type="housebuilder:Room"
-        name="Corridoio II° Piano"
+        name="Corridoio Secondo Piano"
         length="3.0"
         width="1.0"
         passagesA="//@passages.6 //@passages.7"
@@ -221,7 +221,7 @@
       doorsNumber="1"/>
   <passages
       xsi:type="housebuilder:Door"
-      name="Corridoio II° Piano - Bagno II° Piano"
+      name="Corridoio Secondo Piano - Bagno Secondo Piano"
       spaceA="//@floors.1/@spaces.2"
       spaceB="//@floors.1/@spaces.1"
       width="0.8"
@@ -229,7 +229,7 @@
       doorsNumber="1"/>
   <passages
       xsi:type="housebuilder:Door"
-      name="Corridoio II° Piano - Camera da letto matrimoniale"
+      name="Corridoio Secondo  Piano - Camera da letto matrimoniale"
       spaceA="//@floors.1/@spaces.2"
       spaceB="//@floors.1/@spaces.0"
       width="0.8"
