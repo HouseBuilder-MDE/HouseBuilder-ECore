@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<modeltwo:House
+<housebuilderV2:House
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:modeltwo="http://it.univaq.disim/housebuilderV2"
+    xmlns:housebuilderV2="http://it.univaq.disim/housebuilderV2"
         xsi:schemaLocation="http://it.univaq.disim/housebuilderV2 housebuilderV2.ecore"
     name="Casa di Stefano"
     state="Italia"
@@ -15,7 +15,7 @@
   <floors name="Terzo piano"
       level="3">
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Salotto"
         length="5.2"
         width="5.0"
@@ -34,7 +34,7 @@
           model="Telecom"/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Cucina"
         length="4.3"
         width="3.6"
@@ -49,7 +49,7 @@
           model="Hotpoint Ariston "/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Corridoio"
         length="4.0"
         width="1.2"
@@ -62,7 +62,7 @@
           model="Thermocare"/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Cameretta piccola"
         length="4.0"
         width="3.0"
@@ -71,7 +71,7 @@
         height="2.2"
         roomType="BEDROOM"/>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Cameretta grande"
         length="4.8"
         width="3.6"
@@ -85,7 +85,7 @@
           model="Vodafone Station Revolution"/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Bagno piccolo"
         length="3.2"
         width="2.8"
@@ -94,7 +94,7 @@
         height="2.8"
         roomType="BATHROOM"/>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Bagno grande"
         length="4.3"
         width="2.7"
@@ -112,7 +112,7 @@
           height="0.8"/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Camera matrimoniale"
         length="4.9"
         width="4.4"
@@ -130,7 +130,7 @@
           height="1.2"/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Ripostiglio esterno"
         length="1.4"
         width="0.8"
@@ -138,7 +138,7 @@
         height="3.4"
         roomType="STORAGE_ROOM"/>
     <spaces
-        xsi:type="modeltwo:ExternalSpace"
+        xsi:type="housebuilderV2:ExternalSpace"
         name="Balcone principale"
         length="3.2"
         width="8.0"
@@ -146,14 +146,14 @@
         passagesB="//@passages.0 //@passages.1"
         ground="PAVING"/>
     <spaces
-        xsi:type="modeltwo:ExternalSpace"
+        xsi:type="housebuilderV2:ExternalSpace"
         name="Balconcino del bagno piccolo"
         length="2.0"
         width="2.4"
         passagesB="//@passages.11"
         ground="PAVING"/>
     <spaces
-        xsi:type="modeltwo:ExternalSpace"
+        xsi:type="housebuilderV2:ExternalSpace"
         name="Balcone delle camerette"
         length="1.4"
         width="6.4"
@@ -163,7 +163,7 @@
   <floors name="Seminterrato"
       level="-1">
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="Garage principale"
         length="5.6"
         width="6.0"
@@ -284,4 +284,4 @@
       width="1.1"
       height="2.2"
       space="//@floors.0/@spaces.0"/>
-</modeltwo:House>
+</housebuilderV2:House>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modeltwo:House
+<housebuilderV2:House
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:modeltwo="http://it.univaq.disim/housebuilderV2"
+    xmlns:housebuilderV2="http://it.univaq.disim/housebuilderV2"
     xsi:schemaLocation="http://it.univaq.disim/housebuilderV2 housebuilderV2.ecore"
     name="house"
     state="Italia"
@@ -14,7 +14,7 @@
     buildingDate="2021-10-09T00:00:00.000+0200">
   <floors name="1">
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="1"
         length="8.0"
         width="8.0"
@@ -23,7 +23,7 @@
         height="2.0"
         roomType="GARAGE"/>
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="2"
         length="5.0"
         width="6.0"
@@ -36,7 +36,7 @@
           height="1.0"/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:ExternalSpace"
+        xsi:type="housebuilderV2:ExternalSpace"
         name="1"
         length="5.0"
         width="6.0"
@@ -47,7 +47,7 @@
           model="2"/>
     </spaces>
     <spaces
-        xsi:type="modeltwo:ExternalSpace"
+        xsi:type="housebuilderV2:ExternalSpace"
         name="2"
         length="10.0"
         width="12.0"
@@ -57,7 +57,7 @@
   <floors name="2"
       level="2">
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="4"
         length="3.0"
         width="4.0"
@@ -68,7 +68,7 @@
   <floors name="3"
       level="-2">
     <spaces
-        xsi:type="modeltwo:Room"
+        xsi:type="housebuilderV2:Room"
         name="5"
         length="54.0"
         width="5.0"
@@ -119,4 +119,4 @@
         model="wdw"
         actuator="//@controllers.0/@actuators.0"/>
   </entrances>
-</modeltwo:House>
+</housebuilderV2:House>
