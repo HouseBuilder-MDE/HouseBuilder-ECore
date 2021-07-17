@@ -45,7 +45,8 @@
       <devices
           name="Lavastoviglie smart"
           type="APPLIANCE"
-          model="Hotpoint Ariston "/>
+          model="Hotpoint Ariston "
+          actuator="//@controllers.0/@actuators.0"/>
     </spaces>
     <spaces
         xsi:type="housebuilder:Room"
@@ -292,6 +293,11 @@
       model="Raspberry CR4"
       os="Raspberry Pi OS"
       osVersion="1.6">
+    <actuators
+        name="Attuatore Lavastoviglie"
+        type="ELECTRICAL"
+        model="Ubiko"
+        device="//@floors.0/@spaces.1/@devices.0"/>
     <sensors
         name="Temperatura della casa"
         space="//@floors.0/@spaces.2"/>

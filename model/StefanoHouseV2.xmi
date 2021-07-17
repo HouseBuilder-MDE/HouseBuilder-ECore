@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:housebuilderV2="http://it.univaq.disim/housebuilderV2"
-        xsi:schemaLocation="http://it.univaq.disim/housebuilderV2 housebuilderV2.ecore"
+    xsi:schemaLocation="http://it.univaq.disim/housebuilderV2 housebuilderV2.ecore"
     name="Casa di Stefano"
     state="Italia"
     province="Chieti"
@@ -46,7 +46,8 @@
       <devices
           name="Lavastoviglie smart"
           type="APPLIANCE"
-          model="Hotpoint Ariston "/>
+          model="Hotpoint Ariston "
+          actuator="//@controllers.0/@actuators.0"/>
     </spaces>
     <spaces
         xsi:type="housebuilderV2:Room"
@@ -265,6 +266,11 @@
       model="Raspberry CR4"
       os="Raspberry Pi OS"
       osVersion="1.6">
+    <actuators
+        name="Attuatore Lavastoviglie"
+        type="ELECTRICAL"
+        model="Ubico"
+        device="//@floors.0/@spaces.1/@devices.0"/>
     <sensors
         name="Temperatura della casa"
         space="//@floors.0/@spaces.2"/>
