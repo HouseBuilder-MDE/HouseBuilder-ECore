@@ -23,28 +23,28 @@ package housebuilderV2;
 public interface ExternalSpace extends Space {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link housebuilderV2.OuterSpaceType}.
+	 * The literals are from the enumeration {@link housebuilderV2.ExternalSpaceType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see housebuilderV2.OuterSpaceType
-	 * @see #setType(OuterSpaceType)
+	 * @see housebuilderV2.ExternalSpaceType
+	 * @see #setType(ExternalSpaceType)
 	 * @see housebuilderV2.HousebuilderV2Package#getExternalSpace_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	OuterSpaceType getType();
+	ExternalSpaceType getType();
 
 	/**
 	 * Sets the value of the '{@link housebuilderV2.ExternalSpace#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see housebuilderV2.OuterSpaceType
+	 * @see housebuilderV2.ExternalSpaceType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(OuterSpaceType value);
+	void setType(ExternalSpaceType value);
 
 	/**
 	 * Returns the value of the '<em><b>Ground</b></em>' attribute.

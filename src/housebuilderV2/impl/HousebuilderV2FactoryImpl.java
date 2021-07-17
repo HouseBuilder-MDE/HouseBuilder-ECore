@@ -89,8 +89,8 @@ public class HousebuilderV2FactoryImpl extends EFactoryImpl implements Housebuil
 				return createActuatorTypeFromString(eDataType, initialValue);
 			case HousebuilderV2Package.SENSOR_TYPE:
 				return createSensorTypeFromString(eDataType, initialValue);
-			case HousebuilderV2Package.OUTER_SPACE_TYPE:
-				return createOuterSpaceTypeFromString(eDataType, initialValue);
+			case HousebuilderV2Package.EXTERNAL_SPACE_TYPE:
+				return createExternalSpaceTypeFromString(eDataType, initialValue);
 			case HousebuilderV2Package.GROUND_TYPE:
 				return createGroundTypeFromString(eDataType, initialValue);
 			case HousebuilderV2Package.DEVICE_TYPE:
@@ -116,8 +116,8 @@ public class HousebuilderV2FactoryImpl extends EFactoryImpl implements Housebuil
 				return convertActuatorTypeToString(eDataType, instanceValue);
 			case HousebuilderV2Package.SENSOR_TYPE:
 				return convertSensorTypeToString(eDataType, instanceValue);
-			case HousebuilderV2Package.OUTER_SPACE_TYPE:
-				return convertOuterSpaceTypeToString(eDataType, instanceValue);
+			case HousebuilderV2Package.EXTERNAL_SPACE_TYPE:
+				return convertExternalSpaceTypeToString(eDataType, instanceValue);
 			case HousebuilderV2Package.GROUND_TYPE:
 				return convertGroundTypeToString(eDataType, instanceValue);
 			case HousebuilderV2Package.DEVICE_TYPE:
@@ -322,8 +322,8 @@ public class HousebuilderV2FactoryImpl extends EFactoryImpl implements Housebuil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OuterSpaceType createOuterSpaceTypeFromString(EDataType eDataType, String initialValue) {
-		OuterSpaceType result = OuterSpaceType.get(initialValue);
+	public ExternalSpaceType createExternalSpaceTypeFromString(EDataType eDataType, String initialValue) {
+		ExternalSpaceType result = ExternalSpaceType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -333,7 +333,7 @@ public class HousebuilderV2FactoryImpl extends EFactoryImpl implements Housebuil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertOuterSpaceTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertExternalSpaceTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

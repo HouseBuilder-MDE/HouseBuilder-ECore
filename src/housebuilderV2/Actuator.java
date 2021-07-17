@@ -32,7 +32,7 @@ public interface Actuator extends Named {
 	 * @see housebuilderV2.ActuatorType
 	 * @see #setType(ActuatorType)
 	 * @see housebuilderV2.HousebuilderV2Package#getActuator_Type()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	ActuatorType getType();

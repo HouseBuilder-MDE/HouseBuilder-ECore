@@ -34,7 +34,7 @@ public interface Door extends Named {
 	 * @see housebuilderV2.DoorType
 	 * @see #setDoorType(DoorType)
 	 * @see housebuilderV2.HousebuilderV2Package#getDoor_DoorType()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	DoorType getDoorType();

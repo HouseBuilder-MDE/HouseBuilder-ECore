@@ -11,13 +11,13 @@ import housebuilderV2.Door;
 import housebuilderV2.DoorType;
 import housebuilderV2.Entrance;
 import housebuilderV2.ExternalSpace;
+import housebuilderV2.ExternalSpaceType;
 import housebuilderV2.Floor;
 import housebuilderV2.GroundType;
 import housebuilderV2.House;
 import housebuilderV2.HousebuilderV2Factory;
 import housebuilderV2.HousebuilderV2Package;
 import housebuilderV2.Named;
-import housebuilderV2.OuterSpaceType;
 import housebuilderV2.Passage;
 import housebuilderV2.Room;
 import housebuilderV2.RoomType;
@@ -176,7 +176,7 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum outerSpaceTypeEEnum = null;
+	private EEnum externalSpaceTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1086,8 +1086,8 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getOuterSpaceType() {
-		return outerSpaceTypeEEnum;
+	public EEnum getExternalSpaceType() {
+		return externalSpaceTypeEEnum;
 	}
 
 	/**
@@ -1242,7 +1242,7 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 		doorTypeEEnum = createEEnum(DOOR_TYPE);
 		actuatorTypeEEnum = createEEnum(ACTUATOR_TYPE);
 		sensorTypeEEnum = createEEnum(SENSOR_TYPE);
-		outerSpaceTypeEEnum = createEEnum(OUTER_SPACE_TYPE);
+		externalSpaceTypeEEnum = createEEnum(EXTERNAL_SPACE_TYPE);
 		groundTypeEEnum = createEEnum(GROUND_TYPE);
 		deviceTypeEEnum = createEEnum(DEVICE_TYPE);
 	}
@@ -1330,8 +1330,8 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 		initEReference(getSpace_Devices(), this.getDevice(), this.getDevice_Space(), "devices", null, 0, -1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpace_Floor(), this.getFloor(), this.getFloor_Spaces(), "floor", null, 1, 1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpace_Sensors(), this.getSensor(), this.getSensor_Space(), "sensors", null, 0, -1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpace_PassagesA(), this.getPassage(), this.getPassage_SpaceA(), "passagesA", null, 0, -1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpace_PassagesB(), this.getPassage(), this.getPassage_SpaceB(), "passagesB", null, 0, -1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSpace_PassagesA(), this.getPassage(), this.getPassage_SpaceA(), "passagesA", null, 0, -1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSpace_PassagesB(), this.getPassage(), this.getPassage_SpaceB(), "passagesB", null, 0, -1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSpace_Passages(), this.getPassage(), null, "passages", null, 0, -1, Space.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSpace_Footage(), ecorePackage.getEFloat(), "footage", null, 1, 1, Space.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getSpace_Entrances(), this.getEntrance(), this.getEntrance_Space(), "entrances", null, 0, -1, Space.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1347,7 +1347,7 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 		initEReference(getPassage_House(), this.getHouse(), this.getHouse_Passages(), "house", null, 1, 1, Passage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getController_Model(), ecorePackage.getEString(), "model", null, 1, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getController_Model(), ecorePackage.getEString(), "model", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getController_Os(), ecorePackage.getEString(), "os", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getController_OsVersion(), ecorePackage.getEString(), "osVersion", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getController_Actuators(), this.getActuator(), this.getActuator_Controller(), "actuators", null, 1, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1355,14 +1355,14 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 		initEReference(getController_House(), this.getHouse(), this.getHouse_Controllers(), "house", null, 1, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActuator_Type(), this.getActuatorType(), "type", null, 1, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActuator_Type(), this.getActuatorType(), "type", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActuator_Model(), ecorePackage.getEString(), "model", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActuator_Device(), this.getDevice(), this.getDevice_Actuator(), "device", null, 1, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActuator_Controller(), this.getController(), this.getController_Actuators(), "controller", null, 1, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensor_Type(), this.getSensorType(), "type", null, 1, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSensor_Value(), ecorePackage.getEFloat(), "value", "0.0", 1, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSensor_Type(), this.getSensorType(), "type", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSensor_Value(), ecorePackage.getEFloat(), "value", "0.0", 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSensor_Model(), ecorePackage.getEString(), "model", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensor_Space(), this.getSpace(), this.getSpace_Sensors(), "space", null, 1, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensor_Controller(), this.getController(), this.getController_Sensors(), "controller", null, 1, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1378,14 +1378,14 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 		initEAttribute(getWindow_DoorsNumber(), ecorePackage.getEInt(), "doorsNumber", null, 1, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWindow_Width(), ecorePackage.getEFloat(), "width", null, 1, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWindow_Height(), ecorePackage.getEFloat(), "height", null, 1, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWindow_Room(), this.getRoom(), this.getRoom_Windows(), "room", null, 0, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWindow_Room(), this.getRoom(), this.getRoom_Windows(), "room", null, 1, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalSpaceEClass, ExternalSpace.class, "ExternalSpace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExternalSpace_Type(), this.getOuterSpaceType(), "type", null, 0, 1, ExternalSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalSpace_Type(), this.getExternalSpaceType(), "type", null, 1, 1, ExternalSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExternalSpace_Ground(), this.getGroundType(), "ground", null, 0, 1, ExternalSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(doorEClass, Door.class, "Door", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDoor_DoorType(), this.getDoorType(), "doorType", null, 1, 1, Door.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDoor_DoorType(), this.getDoorType(), "doorType", null, 0, 1, Door.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDoor_DoorsNumber(), ecorePackage.getEInt(), "doorsNumber", null, 1, 1, Door.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDoor_Width(), ecorePackage.getEFloat(), "width", null, 1, 1, Door.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDoor_Height(), ecorePackage.getEFloat(), "height", null, 1, 1, Door.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1439,10 +1439,10 @@ public class HousebuilderV2PackageImpl extends EPackageImpl implements Housebuil
 		addEEnumLiteral(sensorTypeEEnum, SensorType.SMOKE);
 		addEEnumLiteral(sensorTypeEEnum, SensorType.VIDEO_SURVAILLANCE_CAMERA);
 
-		initEEnum(outerSpaceTypeEEnum, OuterSpaceType.class, "OuterSpaceType");
-		addEEnumLiteral(outerSpaceTypeEEnum, OuterSpaceType.BALCONY);
-		addEEnumLiteral(outerSpaceTypeEEnum, OuterSpaceType.GARDEN);
-		addEEnumLiteral(outerSpaceTypeEEnum, OuterSpaceType.TERRACE);
+		initEEnum(externalSpaceTypeEEnum, ExternalSpaceType.class, "ExternalSpaceType");
+		addEEnumLiteral(externalSpaceTypeEEnum, ExternalSpaceType.BALCONY);
+		addEEnumLiteral(externalSpaceTypeEEnum, ExternalSpaceType.GARDEN);
+		addEEnumLiteral(externalSpaceTypeEEnum, ExternalSpaceType.TERRACE);
 
 		initEEnum(groundTypeEEnum, GroundType.class, "GroundType");
 		addEEnumLiteral(groundTypeEEnum, GroundType.ASPALTH);

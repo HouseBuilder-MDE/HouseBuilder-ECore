@@ -34,7 +34,7 @@ public interface Controller extends Named {
 	 * @return the value of the '<em>Model</em>' attribute.
 	 * @see #setModel(String)
 	 * @see housebuilderV2.HousebuilderV2Package#getController_Model()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getModel();

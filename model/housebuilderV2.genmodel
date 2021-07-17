@@ -49,10 +49,10 @@
       <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//SensorType/SMOKE"/>
       <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//SensorType/VIDEO_SURVAILLANCE_CAMERA"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="housebuilderV2.ecore#//OuterSpaceType">
-      <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//OuterSpaceType/BALCONY"/>
-      <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//OuterSpaceType/GARDEN"/>
-      <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//OuterSpaceType/TERRACE"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="housebuilderV2.ecore#//ExternalSpaceType">
+      <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//ExternalSpaceType/BALCONY"/>
+      <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//ExternalSpaceType/GARDEN"/>
+      <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//ExternalSpaceType/TERRACE"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="housebuilderV2.ecore#//GroundType">
       <genEnumLiterals ecoreEnumLiteral="housebuilderV2.ecore#//GroundType/ASPALTH"/>

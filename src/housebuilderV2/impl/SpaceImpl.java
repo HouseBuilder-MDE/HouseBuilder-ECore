@@ -513,14 +513,6 @@ public abstract class SpaceImpl extends MinimalEObjectImpl.Container implements 
 				getSensors().clear();
 				getSensors().addAll((Collection<? extends Sensor>)newValue);
 				return;
-			case HousebuilderV2Package.SPACE__PASSAGES_A:
-				getPassagesA().clear();
-				getPassagesA().addAll((Collection<? extends Passage>)newValue);
-				return;
-			case HousebuilderV2Package.SPACE__PASSAGES_B:
-				getPassagesB().clear();
-				getPassagesB().addAll((Collection<? extends Passage>)newValue);
-				return;
 			case HousebuilderV2Package.SPACE__ENTRANCES:
 				getEntrances().clear();
 				getEntrances().addAll((Collection<? extends Entrance>)newValue);
@@ -554,12 +546,6 @@ public abstract class SpaceImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case HousebuilderV2Package.SPACE__SENSORS:
 				getSensors().clear();
-				return;
-			case HousebuilderV2Package.SPACE__PASSAGES_A:
-				getPassagesA().clear();
-				return;
-			case HousebuilderV2Package.SPACE__PASSAGES_B:
-				getPassagesB().clear();
 				return;
 			case HousebuilderV2Package.SPACE__ENTRANCES:
 				getEntrances().clear();

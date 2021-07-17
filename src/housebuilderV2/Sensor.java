@@ -33,7 +33,7 @@ public interface Sensor extends Named {
 	 * @see housebuilderV2.SensorType
 	 * @see #setType(SensorType)
 	 * @see housebuilderV2.HousebuilderV2Package#getSensor_Type()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	SensorType getType();
@@ -57,7 +57,7 @@ public interface Sensor extends Named {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(float)
 	 * @see housebuilderV2.HousebuilderV2Package#getSensor_Value()
-	 * @model default="0.0" required="true"
+	 * @model default="0.0"
 	 * @generated
 	 */
 	float getValue();

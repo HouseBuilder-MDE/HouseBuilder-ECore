@@ -99,7 +99,7 @@ public interface Window extends Named {
 	 * @see #setRoom(Room)
 	 * @see housebuilderV2.HousebuilderV2Package#getWindow_Room()
 	 * @see housebuilderV2.Room#getWindows
-	 * @model opposite="windows" transient="false"
+	 * @model opposite="windows" required="true" transient="false"
 	 * @generated
 	 */
 	Room getRoom();

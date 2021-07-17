@@ -1537,14 +1537,14 @@ public interface HousebuilderV2Package extends EPackage {
 	int SENSOR_TYPE = 17;
 
 	/**
-	 * The meta object id for the '{@link housebuilderV2.OuterSpaceType <em>Outer Space Type</em>}' enum.
+	 * The meta object id for the '{@link housebuilderV2.ExternalSpaceType <em>External Space Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see housebuilderV2.OuterSpaceType
-	 * @see housebuilderV2.impl.HousebuilderV2PackageImpl#getOuterSpaceType()
+	 * @see housebuilderV2.ExternalSpaceType
+	 * @see housebuilderV2.impl.HousebuilderV2PackageImpl#getExternalSpaceType()
 	 * @generated
 	 */
-	int OUTER_SPACE_TYPE = 18;
+	int EXTERNAL_SPACE_TYPE = 18;
 
 	/**
 	 * The meta object id for the '{@link housebuilderV2.GroundType <em>Ground Type</em>}' enum.
@@ -2549,14 +2549,14 @@ public interface HousebuilderV2Package extends EPackage {
 	EEnum getSensorType();
 
 	/**
-	 * Returns the meta object for enum '{@link housebuilderV2.OuterSpaceType <em>Outer Space Type</em>}'.
+	 * Returns the meta object for enum '{@link housebuilderV2.ExternalSpaceType <em>External Space Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Outer Space Type</em>'.
-	 * @see housebuilderV2.OuterSpaceType
+	 * @return the meta object for enum '<em>External Space Type</em>'.
+	 * @see housebuilderV2.ExternalSpaceType
 	 * @generated
 	 */
-	EEnum getOuterSpaceType();
+	EEnum getExternalSpaceType();
 
 	/**
 	 * Returns the meta object for enum '{@link housebuilderV2.GroundType <em>Ground Type</em>}'.
@@ -3366,14 +3366,14 @@ public interface HousebuilderV2Package extends EPackage {
 		EEnum SENSOR_TYPE = eINSTANCE.getSensorType();
 
 		/**
-		 * The meta object literal for the '{@link housebuilderV2.OuterSpaceType <em>Outer Space Type</em>}' enum.
+		 * The meta object literal for the '{@link housebuilderV2.ExternalSpaceType <em>External Space Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see housebuilderV2.OuterSpaceType
-		 * @see housebuilderV2.impl.HousebuilderV2PackageImpl#getOuterSpaceType()
+		 * @see housebuilderV2.ExternalSpaceType
+		 * @see housebuilderV2.impl.HousebuilderV2PackageImpl#getExternalSpaceType()
 		 * @generated
 		 */
-		EEnum OUTER_SPACE_TYPE = eINSTANCE.getOuterSpaceType();
+		EEnum EXTERNAL_SPACE_TYPE = eINSTANCE.getExternalSpaceType();
 
 		/**
 		 * The meta object literal for the '{@link housebuilderV2.GroundType <em>Ground Type</em>}' enum.

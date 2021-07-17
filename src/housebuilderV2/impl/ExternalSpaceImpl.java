@@ -3,9 +3,9 @@
 package housebuilderV2.impl;
 
 import housebuilderV2.ExternalSpace;
+import housebuilderV2.ExternalSpaceType;
 import housebuilderV2.GroundType;
 import housebuilderV2.HousebuilderV2Package;
-import housebuilderV2.OuterSpaceType;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -36,7 +36,7 @@ public class ExternalSpaceImpl extends SpaceImpl implements ExternalSpace {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final OuterSpaceType TYPE_EDEFAULT = OuterSpaceType.BALCONY;
+	protected static final ExternalSpaceType TYPE_EDEFAULT = ExternalSpaceType.BALCONY;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -46,7 +46,7 @@ public class ExternalSpaceImpl extends SpaceImpl implements ExternalSpace {
 	 * @generated
 	 * @ordered
 	 */
-	protected OuterSpaceType type = TYPE_EDEFAULT;
+	protected ExternalSpaceType type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getGround() <em>Ground</em>}' attribute.
@@ -92,7 +92,7 @@ public class ExternalSpaceImpl extends SpaceImpl implements ExternalSpace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OuterSpaceType getType() {
+	public ExternalSpaceType getType() {
 		return type;
 	}
 
@@ -101,8 +101,8 @@ public class ExternalSpaceImpl extends SpaceImpl implements ExternalSpace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(OuterSpaceType newType) {
-		OuterSpaceType oldType = type;
+	public void setType(ExternalSpaceType newType) {
+		ExternalSpaceType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HousebuilderV2Package.EXTERNAL_SPACE__TYPE, oldType, type));
@@ -154,7 +154,7 @@ public class ExternalSpaceImpl extends SpaceImpl implements ExternalSpace {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HousebuilderV2Package.EXTERNAL_SPACE__TYPE:
-				setType((OuterSpaceType)newValue);
+				setType((ExternalSpaceType)newValue);
 				return;
 			case HousebuilderV2Package.EXTERNAL_SPACE__GROUND:
 				setGround((GroundType)newValue);

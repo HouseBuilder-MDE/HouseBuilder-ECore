@@ -122,8 +122,8 @@ public class HousebuilderV2Validator extends EObjectValidator {
 				return validateActuatorType((ActuatorType)value, diagnostics, context);
 			case HousebuilderV2Package.SENSOR_TYPE:
 				return validateSensorType((SensorType)value, diagnostics, context);
-			case HousebuilderV2Package.OUTER_SPACE_TYPE:
-				return validateOuterSpaceType((OuterSpaceType)value, diagnostics, context);
+			case HousebuilderV2Package.EXTERNAL_SPACE_TYPE:
+				return validateExternalSpaceType((ExternalSpaceType)value, diagnostics, context);
 			case HousebuilderV2Package.GROUND_TYPE:
 				return validateGroundType((GroundType)value, diagnostics, context);
 			case HousebuilderV2Package.DEVICE_TYPE:
@@ -428,7 +428,7 @@ public class HousebuilderV2Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOuterSpaceType(OuterSpaceType outerSpaceType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateExternalSpaceType(ExternalSpaceType externalSpaceType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

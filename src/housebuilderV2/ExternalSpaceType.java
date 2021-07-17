@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Outer Space Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>External Space Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see housebuilderV2.HousebuilderV2Package#getOuterSpaceType()
+ * @see housebuilderV2.HousebuilderV2Package#getExternalSpaceType()
  * @model
  * @generated
  */
-public enum OuterSpaceType implements Enumerator {
+public enum ExternalSpaceType implements Enumerator {
 	/**
 	 * The '<em><b>BALCONY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -82,37 +82,37 @@ public enum OuterSpaceType implements Enumerator {
 	public static final int TERRACE_VALUE = 2;
 
 	/**
-	 * An array of all the '<em><b>Outer Space Type</b></em>' enumerators.
+	 * An array of all the '<em><b>External Space Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final OuterSpaceType[] VALUES_ARRAY =
-		new OuterSpaceType[] {
+	private static final ExternalSpaceType[] VALUES_ARRAY =
+		new ExternalSpaceType[] {
 			BALCONY,
 			GARDEN,
 			TERRACE,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Outer Space Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>External Space Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<OuterSpaceType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ExternalSpaceType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Outer Space Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>External Space Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static OuterSpaceType get(String literal) {
+	public static ExternalSpaceType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			OuterSpaceType result = VALUES_ARRAY[i];
+			ExternalSpaceType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -121,16 +121,16 @@ public enum OuterSpaceType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Outer Space Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>External Space Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static OuterSpaceType getByName(String name) {
+	public static ExternalSpaceType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			OuterSpaceType result = VALUES_ARRAY[i];
+			ExternalSpaceType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -139,14 +139,14 @@ public enum OuterSpaceType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Outer Space Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>External Space Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static OuterSpaceType get(int value) {
+	public static ExternalSpaceType get(int value) {
 		switch (value) {
 			case BALCONY_VALUE: return BALCONY;
 			case GARDEN_VALUE: return GARDEN;
@@ -182,7 +182,7 @@ public enum OuterSpaceType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private OuterSpaceType(int value, String name, String literal) {
+	private ExternalSpaceType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -226,4 +226,4 @@ public enum OuterSpaceType implements Enumerator {
 		return literal;
 	}
 	
-} //OuterSpaceType
+} //ExternalSpaceType

@@ -135,7 +135,7 @@ public interface Space extends Named {
 	 * @return the value of the '<em>Passages A</em>' reference list.
 	 * @see housebuilderV2.HousebuilderV2Package#getSpace_PassagesA()
 	 * @see housebuilderV2.Passage#getSpaceA
-	 * @model opposite="spaceA" ordered="false"
+	 * @model opposite="spaceA" changeable="false" ordered="false"
 	 * @generated
 	 */
 	EList<Passage> getPassagesA();
@@ -149,7 +149,7 @@ public interface Space extends Named {
 	 * @return the value of the '<em>Passages B</em>' reference list.
 	 * @see housebuilderV2.HousebuilderV2Package#getSpace_PassagesB()
 	 * @see housebuilderV2.Passage#getSpaceB
-	 * @model opposite="spaceB" ordered="false"
+	 * @model opposite="spaceB" changeable="false" ordered="false"
 	 * @generated
 	 */
 	EList<Passage> getPassagesB();
