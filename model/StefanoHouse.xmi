@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:housebuilder="http://it.univaq.disim/housebuilder"
-    xsi:schemaLocation="http://it.univaq.disim/housebuilder housebuilder.ecore"
+    xsi:schemaLocation="http://it.univaq.disim/housebuilder /HouseBuilder-ECore/model/housebuilder.ecore"
     name="Casa di Stefano"
     state="Italia"
     province="Chieti"
@@ -109,7 +109,7 @@
           name="A ribalta del bagno grande"
           doorsNumber="1"
           width="0.8"
-          height="0.8"/>
+          height="1.8"/>
     </spaces>
     <spaces
         xsi:type="housebuilder:Room"
